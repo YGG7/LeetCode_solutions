@@ -3,7 +3,7 @@ package LeetCode;
 /**
  * Jianzhi 53-I https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/
  */
-public class NumberOfRepeatedNumbers {
+public class CountRepeatedNumbers {
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) return 0;
         int len = nums.length;
