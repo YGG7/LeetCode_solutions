@@ -3,7 +3,7 @@ package LeetCode;
 /**
  * Jianzhi 66. https://leetcode-cn.com/problems/gou-jian-cheng-ji-shu-zu-lcof/
  */
-public class MultiplicationArray {
+public class ProductArray {
     public int[] constructArr(int[] a) {
         if (a==null || a.length==0) return new int[0];
         int len = a.length;
