@@ -2,6 +2,8 @@ package LeetCode;
 
 import LeetCode.util.ListNode;
 
+import java.util.List;
+
 /**
  * LC 25. https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
  */
@@ -14,7 +16,6 @@ public class ReverseNodesInKGroup {
         ListNode fakeHead = new ListNode(0);
         // store the last group tail to avoid overwriting
         ListNode groupHead = null, groupLastTail = fakeHead, groupTail = null; // head and tail of reversed group
-
         for (int i = 0; i < (len / k) * k; i++) {
             ListNode tmp = curr.next;
             if (i % k == 0) {
@@ -82,6 +83,21 @@ public class ReverseNodesInKGroup {
         }
         // return the reversed group head and tail
         return new ListNode[]{tail, head};
+    }
+
+    private static ListNode reverse2(ListNode head, ListNode tail, ListNode lastGroupTail) {
+        ListNode prev = null, curr = head;
+        while (prev != tail) {
+            ListNode tmp = curr.next;
+            if (curr == tail) {
+                lastGroupTail.next = curr;
+            }
+            curr.next = prev;
+            prev = curr;
+            curr = tmp;
+        }
+        // return the reversed group head and tail
+        return head;
     }
 
     // reverseKGroup keeps the original order of remaining nodes that are not enough to form a K-group

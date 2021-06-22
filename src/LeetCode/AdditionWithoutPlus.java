@@ -6,10 +6,10 @@ package LeetCode;
 
 public class AdditionWithoutPlus {
     public int add(int a, int b) {
-        int res = a^b;
-        int carry = (a&b)<<1;
-        while(carry!=0) {
-            int tmp = (res&carry)<<1;
+        int res = a ^ b;
+        int carry = (a & b) << 1;
+        while (carry != 0) {
+            int tmp = (res & carry) << 1;
             res ^= carry;
             carry = tmp;
         }
